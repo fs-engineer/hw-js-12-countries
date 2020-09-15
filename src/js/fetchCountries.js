@@ -1,4 +1,5 @@
-import refs from './refs';
+'use strict';
+import { refs } from './refs';
 
 const debounce = require('lodash.debounce');
 
