@@ -1,6 +1,6 @@
 export const refs = {
   searchQuery: document.querySelector('.input-name'),
-  countriesList: document.querySelector('.articles-list'),
+  countryWrapper: document.querySelector('.countries__wrapper'),
 };
 
 // export default refs;

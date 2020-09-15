@@ -1,0 +1,39 @@
+{{#each this}}
+<div class="country__wrapper">
+  <h2 class="country__title">
+    Название {{name}}
+  </h2>
+  <div class="country__desctiption">
+
+    <ul class="description__list">
+
+      <li class="desctioption__item">
+        <h3 class="desctioption__title">Столица: <span class="description__title-value">{{capital}}</span></h3>
+      </li>
+
+      <li class="desctioption__item">
+        <h3 class="desctioption__title">Население: <span class="description__title-value">{{population}}</span>
+        </h3>
+      </li>
+
+      <li class="desctioption__item">
+
+        <h3 class="desctioption__title">Язык: <ul class="descrioption__language-list">
+
+            {{#each languages}}
+            <li class="description__language-item">
+              {{this.name}}
+            </li>
+            {{/each}}
+
+          </ul>
+        </h3>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flag__wrapper">
+    <img src="{{flag}}" alt="flag" width="320">
+  </div>
+</div>
+{{/each}}
