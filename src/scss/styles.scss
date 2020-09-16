@@ -10,6 +10,9 @@
 .input-name {
   margin-top: 150px;
   margin-bottom: 50px;
+  width: 600px;
+  height: 50px;
+  padding-left: 20px;
 }
 
 .country {
@@ -20,6 +23,11 @@
 
   &__desctiption {
     margin-right: 50px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 50px;
   }
 }
 
