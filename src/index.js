@@ -35,6 +35,8 @@ function getInputQuery(event) {
 function addCoutriesListToHTML(countriesMarkup) {
   const markup = countTemp(countriesMarkup);
 
+  clearFlagsStyle();
+
   refs.countryWrapper.innerHTML = '';
   refs.countryWrapper.insertAdjacentHTML('beforeend', markup);
 }
@@ -44,8 +46,13 @@ function addFullCoutryInfo(country) {
 
   addBackgroundImage(country);
 
-  refs.countryWrapper.innerHTML = '';
+  clearCountriesList();
+
   refs.countryWrapper.insertAdjacentHTML('beforeend', markup);
+}
+
+function clearCountriesList() {
+  refs.countryWrapper.innerHTML = '';
 }
 
 export function selectTypeOutputInfo(numberOfCountries) {
@@ -57,6 +64,9 @@ export function selectTypeOutputInfo(numberOfCountries) {
 }
 
 function makePNotify() {
+  clearCountriesList();
+  clearFlagsStyle();
+
   const myError = error({
     text: 'Найдено слишком много совпадений, уточните ваш запрос',
     type: 'error',
@@ -65,6 +75,10 @@ function makePNotify() {
   });
 }
 
-export function addBackgroundImage(obj) {
+function addBackgroundImage(obj) {
   refs.flagOverflow.style.backgroundImage = `url(${obj[0]['flag']})`;
+}
+
+function clearFlagsStyle() {
+  refs.flagOverflow.style.backgroundImage = `url()`;
 }
