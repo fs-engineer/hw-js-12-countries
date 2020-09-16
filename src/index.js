@@ -2,7 +2,7 @@ import './css/normalize.css';
 import './scss/base-styles.scss';
 import './scss/styles.scss';
 
-import { alert, notice, info, success, error } from '@pnotify/core';
+import { error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
@@ -16,10 +16,10 @@ const debounce = require('lodash.debounce');
 
 refs.searchQuery.addEventListener(
   'input',
-  debounce(handleGenerateFromResponse, 500),
+  debounce(handleGenerateListFromResponse, 500),
 );
 
-function handleGenerateFromResponse(event) {
+function handleGenerateListFromResponse(event) {
   let inputValue = getInputQuery(event);
 
   if (inputValue) {

@@ -1,38 +1,42 @@
 .container {
   position: relative;
-  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .input-name {
+  margin-top: 150px;
   margin-bottom: 50px;
 }
 
-.country__wrapper {
-  display: flex;
-  padding: 50px;
+.country {
+  &__wrapper {
+    display: flex;
+    padding: 50px;
+  }
+
+  &__desctiption {
+    margin-right: 50px;
+  }
 }
 
-.country__desctiption {
-  margin-right: 50px;
-}
+.flag {
+  &__wrapper {
+    box-shadow: 5px 5px 13px 1px #c1c1c1;
+    padding: 20px;
+  }
 
-.flag__wrapper {
-  box-shadow: 5px 5px 13px 1px #c1c1c1;
-  padding: 20px;
-}
-
-.flag__overflow {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -100;
-  opacity: 0.1;
+  &__overflow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -100;
+    opacity: 0.1;
+  }
 }
