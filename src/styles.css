@@ -18,3 +18,9 @@ body {
    */
   background-image: url('./images/bg-pattern.png');
 }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: ;
+}

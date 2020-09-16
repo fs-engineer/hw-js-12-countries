@@ -1,6 +1,10 @@
 import './styles.css';
+import './css/normalize.css';
+import './scss/base-styles.scss';
+import './scss/styles.scss';
 
 import { alert, notice, info, success, error } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
 import { refs } from './js/refs';
@@ -38,6 +42,8 @@ function addCoutriesListToHTML(countriesMarkup) {
 function addFullCoutryInfo(country) {
   const markup = fullCoutryInfo(country);
 
+  addBackgroundImage(country);
+
   refs.countryWrapper.innerHTML = '';
   refs.countryWrapper.insertAdjacentHTML('beforeend', markup);
 }
@@ -55,10 +61,10 @@ function makePNotify() {
     text: 'Найдено слишком много совпадений, уточните ваш запрос',
     type: 'error',
     title: 'Ошибка',
-    styling: 'brighttheme',
-    icons: 'brighttheme',
     animateSpeed: 'fast',
-    shadow: true,
-    closerHover: true,
   });
+}
+
+export function addBackgroundImage(obj) {
+  refs.flagOverflow.style.backgroundImage = `url(${obj[0]['flag']})`;
 }
