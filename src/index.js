@@ -1,4 +1,3 @@
-import './styles.css';
 import './css/normalize.css';
 import './scss/base-styles.scss';
 import './scss/styles.scss';
