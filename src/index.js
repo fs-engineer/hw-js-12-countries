@@ -55,11 +55,13 @@ function clearCountriesList() {
 }
 
 export function selectTypeOutputInfo(numberOfCountries) {
-  numberOfCountries.length < 2
-    ? addFullCoutryInfo(numberOfCountries)
-    : numberOfCountries.length > 2 && numberOfCountries.length < 10
-    ? addCoutriesListToHTML(numberOfCountries)
-    : makePNotify();
+  if (numberOfCountries.length < 2) {
+    addFullCoutryInfo(numberOfCountries);
+  } else if (numberOfCountries.length > 2 && numberOfCountries.length < 10) {
+    addCoutriesListToHTML(numberOfCountries);
+  } else {
+    makePNotify();
+  }
 }
 
 function makePNotify() {
