@@ -23,7 +23,7 @@ function handleGenerateListFromResponse(event) {
   let inputValue = getInputQuery(event);
 
   if (inputValue) {
-    fetchCountries(inputValue);
+    getCountriesList(inputValue);
   }
 }
 
@@ -54,12 +54,14 @@ function clearCountriesList() {
   refs.countryWrapper.innerHTML = '';
 }
 
-export function selectTypeOutputInfo(numberOfCountries) {
+function selectTypeOutputInfo(numberOfCountries) {
   if (numberOfCountries.length < 2) {
     addFullCoutryInfo(numberOfCountries);
-  } else if (numberOfCountries.length > 2 && numberOfCountries.length < 10) {
+  }
+  if (numberOfCountries.length > 2 && numberOfCountries.length < 10) {
     addCoutriesListToHTML(numberOfCountries);
-  } else {
+  }
+  if (numberOfCountries.length > 10) {
     makePNotify();
   }
 }
@@ -82,4 +84,10 @@ function addBackgroundImage(obj) {
 
 function clearFlagsStyle() {
   refs.flagOverflow.style.backgroundImage = `url()`;
+}
+
+function getCountriesList(value) {
+  fetchCountries(value)
+    .then(countries => selectTypeOutputInfo(countries))
+    .catch(error => console.log(error));
 }
